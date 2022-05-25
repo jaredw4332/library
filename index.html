@@ -5,10 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <h1>Welcome to the library</h1>
     <p>here are your books bro</p>
+
+    <form id="bookInput">
+        <label for="title">Title:</label><br>
+        <input type="text" name="title" id="title" required><br>
+
+        <label for="author">Author:</label><br>
+        <input type="text" name="author" id="author" required><br>
+
+        <label for="pages">Pages:</label><br>
+        <input type="number" name="pages" id="pages" required><br>
+
+        <label for="read">Read?</label><br>
+        <input type="radio" name="read" id="yes" value="Yes">Yes
+        <input type="radio" name="read" id="no" value="No">No <br>
+        <!--- read, reading, not read? --->
+
+        <button type="button" id="submitBook" onclick="addBookToLibrary()">Submit</button>
+    </form>
+
+    <div id="libraryDisplay"></div>
 </body>
 </html>
