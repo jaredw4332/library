@@ -20,7 +20,13 @@ function addBookToLibrary() {
     let bookTitle = document.getElementById("title").value
     let bookAuthor = document.getElementById("author").value
     let bookPages = document.getElementById("pages").value
-    let bookRead = document.querySelector('input[name="read"]:checked').value;
+    let bookRead = document.getElementById("read")
+    if (!bookRead.checked) {
+        bookRead = document.querySelector('input[name="read"]').value;
+    }
+    else {
+        bookRead = document.getElementById("read").value
+    }
 
     let newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead)
     myLibrary.push(newBook)
@@ -58,7 +64,6 @@ function bookDisplay() {
 
         let bookRead = document.createElement('button')
         bookRead.setAttribute("class", "bookRead")
-        console.log(myLibrary[i].read)
         bookRead.onclick = function() {
             if (myLibrary[i].read == "read") {
                 myLibrary[i].read = "not read"
@@ -79,6 +84,7 @@ function bookDisplay() {
         bookRemoveButton.textContent = "X"
         bookRemoveButton.onclick = function() {
             book.remove()
+            myLibrary.splice(book, 1)
         }
         book.appendChild(bookRemoveButton)
     }
