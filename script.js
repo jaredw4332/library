@@ -1,6 +1,11 @@
 let myLibrary = [];
 const libraryDisplay = document.getElementById("libraryDisplay")
 
+const beans = new Book("beans", "jimmy beans", 5, "not read")
+const orange = new Book("tommy", "what", 20, "sorry")
+myLibrary.push(beans, orange)
+bookDisplay()
+
 function Book(title, author, pages, read) {
     this.title = title
     this.author = author
@@ -55,5 +60,21 @@ function bookDisplay() {
         bookRead.setAttribute("class", "bookRead")
         bookRead.textContent = `${myLibrary[i].read}`
         book.appendChild(bookRead)
+
+        let bookRemoveButton = document.createElement('button')
+        bookRemoveButton.setAttribute("class", "bookRemoveButton")
+        bookRemoveButton.textContent = "X"
+        bookRemoveButton.onclick = function() {
+            book.remove()
+        }
+        book.appendChild(bookRemoveButton)
     }
+}
+
+function openForm() {
+    document.getElementById("popupForm").style.display = "block"
+}
+
+function closeForm() {
+    document.getElementById("popupForm").style.display = "none";
 }
