@@ -9,26 +9,34 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Welcome to the library</h1>
-    <p>here are your books bro</p>
+    <div id="headerContent">
+        <h1>Welcome to the library</h1>
+        <p>here are your books bro</p>
+        <button type="button" id="addBookButton" onclick="openForm()">Add book</button>
+    </div>
 
-    <form id="bookInput">
-        <label for="title">Title:</label><br>
-        <input type="text" name="title" id="title" required><br>
 
-        <label for="author">Author:</label><br>
-        <input type="text" name="author" id="author" required><br>
+    <div id="popupForm">
+        <button type="button" id="closeFormButton" onclick="closeForm()">X</button>
+        <form id="bookInput">
+            <label for="title">Title:</label><br>
+            <input type="text" name="title" id="title" required><br>
 
-        <label for="pages">Pages:</label><br>
-        <input type="number" name="pages" id="pages" required><br>
+            <label for="author">Author:</label><br>
+            <input type="text" name="author" id="author" required><br>
 
-        <label for="read">Read?</label><br>
-        <input type="radio" name="read" id="yes" value="Yes">Yes
-        <input type="radio" name="read" id="no" value="No">No <br>
-        <!--- read, reading, not read? --->
+            <label for="pages">Pages:</label><br>
+            <input type="number" name="pages" id="pages" required><br>
 
-        <button type="button" id="submitBook" onclick="addBookToLibrary()">Submit</button>
-    </form>
+            <label for="read">Read?</label><br>
+            <input type="radio" name="read" id="yes" value="Yes">Yes
+            <input type="radio" name="read" id="no" value="No">No <br>
+            <!--- read, reading, not read? --->
+
+            <button type="button" id="submitBook" onclick="addBookToLibrary()">Submit</button>
+        </form>
+    </div>
+
 
     <div id="libraryDisplay"></div>
 </body>
