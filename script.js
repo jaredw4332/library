@@ -2,7 +2,7 @@ let myLibrary = [];
 const libraryDisplay = document.getElementById("libraryDisplay")
 
 const beans = new Book("beans", "jimmy beans", 5, "not read")
-const orange = new Book("tommy", "what", 20, "sorry")
+const orange = new Book("tommy", "what", 20, "read")
 myLibrary.push(beans, orange)
 bookDisplay()
 
@@ -56,8 +56,21 @@ function bookDisplay() {
         bookPages.textContent = `${myLibrary[i].pages}`
         book.appendChild(bookPages)
 
-        let bookRead = document.createElement('p')
+        let bookRead = document.createElement('button')
         bookRead.setAttribute("class", "bookRead")
+        console.log(myLibrary[i].read)
+        bookRead.onclick = function() {
+            if (myLibrary[i].read == "read") {
+                myLibrary[i].read = "not read"
+                bookRead.classList.add("bookNotRead")
+                bookRead.textContent = `${myLibrary[i].read}`
+            }
+            else {
+                myLibrary[i].read = "read"
+                bookRead.classList.remove("bookNotRead")
+                bookRead.textContent = `${myLibrary[i].read}`
+            }
+        }
         bookRead.textContent = `${myLibrary[i].read}`
         book.appendChild(bookRead)
 
