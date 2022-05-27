@@ -1,9 +1,16 @@
 let myLibrary = [];
 const libraryDisplay = document.getElementById("libraryDisplay")
 
-const beans = new Book("beans", "jimmy beans", 5, "not read")
-const orange = new Book("tommy", "what", 20, "read")
-myLibrary.push(beans, orange)
+const beans = new Book("beans", "jimmy beans", 5, "Not yet read")
+const orange = new Book("tommy", "what", 20, "Read")
+const orange2 = new Book("tommy", "what", 20, "Read")
+const orange4 = new Book("tommy", "what", 20, "Read")
+const orange3 = new Book("tommy", "what", 20, "Read")
+const orange5 = new Book("tommy", "what", 20, "Read")
+const orange6 = new Book("tommy", "what", 20, "Read")
+const orange7 = new Book("tommy", "what", 20, "Read")
+const orange8 = new Book("tommy", "what", 20, "Not yet read")
+myLibrary.push(beans, orange, orange2, orange3, orange4, orange5, orange6, orange7, orange8)
 bookDisplay()
 
 function Book(title, author, pages, read) {
@@ -55,24 +62,24 @@ function bookDisplay() {
 
         let bookAuthor = document.createElement('p')
         bookAuthor.setAttribute("class", "bookAuthor")
-        bookAuthor.textContent = `${myLibrary[i].author}`
+        bookAuthor.textContent = `Written by ${myLibrary[i].author}`
         book.appendChild(bookAuthor)
 
         let bookPages = document.createElement('p')
         bookPages.setAttribute("class", "bookPages")
-        bookPages.textContent = `${myLibrary[i].pages}`
+        bookPages.textContent = `${myLibrary[i].pages} pages`
         book.appendChild(bookPages)
 
         let bookRead = document.createElement('button')
         bookRead.setAttribute("class", "bookRead")
         bookRead.onclick = function() {
-            if (myLibrary[i].read == "read") {
-                myLibrary[i].read = "not read"
+            if (myLibrary[i].read == "Read") {
+                myLibrary[i].read = "Not yet read"
                 bookRead.classList.add("bookNotRead")
                 bookRead.textContent = `${myLibrary[i].read}`
             }
             else {
-                myLibrary[i].read = "read"
+                myLibrary[i].read = "Read"
                 bookRead.classList.remove("bookNotRead")
                 bookRead.textContent = `${myLibrary[i].read}`
             }
