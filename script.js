@@ -21,18 +21,19 @@ function addBookToLibrary() {
     let bookAuthor = document.getElementById("author").value
     let bookPages = document.getElementById("pages").value
     let bookRead = document.getElementById("read")
+    
     if (!bookRead.checked) {
         bookRead = document.querySelector('input[name="read"]').value;
     }
     else {
         bookRead = document.getElementById("read").value
     }
-
     let newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead)
     myLibrary.push(newBook)
 
     bookDisplay()
     document.getElementById("bookInput").reset()
+    return false
 }
 
 function bookDisplay() {
