@@ -9,34 +9,33 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="headerContent">
-        <h1>Welcome to the library</h1>
-        <p>here are your books bro</p>
-        <button type="button" id="addBookButton" onclick="openForm()">Add book</button>
+    <div id="container">
+        <div id="headerContent">
+            <h1>Welcome to the library</h1>
+            <button type="button" id="addBookButton" onclick="openForm()">Add book</button>
+        </div>
+
+        <div id="popupForm">
+            <button type="button" id="closeFormButton" onclick="closeForm()">X</button>
+            <form id="bookInput" onsubmit="return addBookToLibrary()">
+                <label for="title">Title:</label><br>
+                <input type="text" name="title" id="title" required><br>
+
+                <label for="author">Author:</label><br>
+                <input type="text" name="author" id="author" required><br>
+
+                <label for="pages">Pages:</label><br>
+                <input type="number" name="pages" id="pages" required><br>
+
+                <label for="read">Read?</label>
+                <input type="hidden" name="read" value="Not yet read">
+                <input type="checkbox" name="read" id="read" value="Read"><br>
+
+                <button type="submit" id="submitBook">Submit</button>
+            </form>
+        </div>
+
+        <div id="libraryDisplay"></div>
     </div>
-
-
-    <div id="popupForm">
-        <button type="button" id="closeFormButton" onclick="closeForm()">X</button>
-        <form id="bookInput" onsubmit="return addBookToLibrary()">
-            <label for="title">Title:</label><br>
-            <input type="text" name="title" id="title" required><br>
-
-            <label for="author">Author:</label><br>
-            <input type="text" name="author" id="author" required><br>
-
-            <label for="pages">Pages:</label><br>
-            <input type="number" name="pages" id="pages" required><br>
-
-            <label for="read">Read?</label>
-            <input type="hidden" name="read" value="not read">
-            <input type="checkbox" name="read" id="read" value="read"><br>
-
-            <button type="submit" id="submitBook">Submit</button>
-        </form>
-    </div>
-
-
-    <div id="libraryDisplay"></div>
 </body>
 </html>
