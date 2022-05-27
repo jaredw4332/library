@@ -18,7 +18,7 @@
 
     <div id="popupForm">
         <button type="button" id="closeFormButton" onclick="closeForm()">X</button>
-        <form id="bookInput">
+        <form id="bookInput" onsubmit="return addBookToLibrary()">
             <label for="title">Title:</label><br>
             <input type="text" name="title" id="title" required><br>
 
@@ -32,7 +32,7 @@
             <input type="hidden" name="read" value="not read">
             <input type="checkbox" name="read" id="read" value="read"><br>
 
-            <button type="button" id="submitBook" onclick="addBookToLibrary()">Submit</button>
+            <button type="submit" id="submitBook">Submit</button>
         </form>
     </div>
 
