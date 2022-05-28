@@ -2,15 +2,13 @@ let myLibrary = [];
 const libraryDisplay = document.getElementById("libraryDisplay")
 
 const beans = new Book("beans", "jimmy beans", 5, "Not yet read")
-const orange = new Book("tommy", "what", 20, "Read")
-const orange2 = new Book("tommy", "what", 20, "Read")
-const orange4 = new Book("tommy", "what", 20, "Read")
-const orange3 = new Book("tommy", "what", 20, "Read")
-const orange5 = new Book("tommy", "what", 20, "Read")
-const orange6 = new Book("tommy", "what", 20, "Read")
-const orange7 = new Book("tommy", "what", 20, "Read")
-const orange8 = new Book("tommy", "what", 20, "Not yet read")
-myLibrary.push(beans, orange, orange2, orange3, orange4, orange5, orange6, orange7, orange8)
+const orange = new Book("Catcher in the Rye", "Ernest Hemingway", 20, "Read")
+const orange2 = new Book("A Long Way Home From Midtown West", "Ernest Hemingway", 20, "Read")
+const orange4 = new Book("Tommy", "Ernest Hemingway", 20, "Read")
+const orange3 = new Book("Tommy", "Ernest Hemingway", 20, "Read")
+const orange7 = new Book("Tommy", "Ernest Hemingway", 20, "Read")
+const orange8 = new Book("Tommy", "Ernest Hemingway", 20, "Not yet read")
+myLibrary.push(beans, orange, orange2, orange3, orange4, orange7, orange8)
 bookDisplay()
 
 function Book(title, author, pages, read) {
@@ -72,6 +70,9 @@ function bookDisplay() {
 
         let bookRead = document.createElement('button')
         bookRead.setAttribute("class", "bookRead")
+        if (myLibrary[i].read == "Not yet read") {
+            bookRead.classList.add("bookNotRead")
+        }
         bookRead.onclick = function() {
             if (myLibrary[i].read == "Read") {
                 myLibrary[i].read = "Not yet read"
@@ -89,7 +90,6 @@ function bookDisplay() {
 
         let bookRemoveButton = document.createElement('button')
         bookRemoveButton.setAttribute("class", "bookRemoveButton")
-        bookRemoveButton.textContent = "X"
         bookRemoveButton.onclick = function() {
             book.remove()
             myLibrary.splice(book, 1)
