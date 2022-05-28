@@ -98,10 +98,21 @@ function bookDisplay() {
     }
 }
 
+const popupForm = document.getElementById("popupForm")
+const formBackground = document.getElementById("formBackground")
+
 function openForm() {
-    document.getElementById("popupForm").style.display = "block"
+    popupForm.style.display = "block"
+    formBackground.style.display = "block"
+    document.querySelectorAll("#container")
+    .forEach(element => element.style.filter = "blur(2px)");
 }
 
 function closeForm() {
-    document.getElementById("popupForm").style.display = "none";
+    popupForm.style.display = "none";
+    formBackground.style.display = "none"
+    document.querySelectorAll("#container")
+    .forEach(element => element.style.filter = "");
 }
+
+formBackground.addEventListener("click", closeForm)
