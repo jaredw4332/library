@@ -58,8 +58,12 @@ body, button, input {
     font-family: 'Charm', cursive, sans-serif;
 }
 
+button:active {
+    transform: scale(0.95);
+}
+
 #container {
-    background-color: #9bb27a;
+    background-color: #4dbb68;
     height: 100vh;
     display: grid;
     grid-template-rows: 1fr 4fr;
@@ -85,19 +89,20 @@ body, button, input {
     grid-area: 1 / 2 / 3 / 3;
     align-self: center;
     justify-self: center;
-    background-color: #6f5234;
+    background-color: #6b5445;
     color: whitesmoke;
     border-radius: 20%;
     font-weight: 700;
     font-size: 30px;
     padding: 20px;
     cursor: pointer;
+    box-shadow: 2px 2px 2px #2b683a;
 }
 
 /* BODY */
 
 #libraryDisplay {
-    background-color: #655c2b;
+    background-color: #c4e5b3;
     display: grid;
     padding: 25px;
     gap: 25px;
@@ -106,7 +111,7 @@ body, button, input {
 }
 
 .bookContainer {
-    background-color: #c98d50;
+    background-color: #f2cd67;
     border-radius: 10px;
     padding: 10px;
     display: grid;
@@ -115,7 +120,7 @@ body, button, input {
     justify-items: center;
     align-items: center;
     max-height: 300px;
-    box-shadow: 2px 2px 2px;
+    box-shadow: 2px 2px 2px #607058;
 }
 
 .bookRemoveButton {
@@ -132,6 +137,8 @@ body, button, input {
     cursor: pointer;
     border-radius: 100%;
     background-color: transparent;
+    filter: invert(32%) sepia(20%) saturate(653%) hue-rotate(340deg) brightness(96%) contrast(86%);
+    box-shadow: 1px 1px 1px #ffffff;
 }
 
 .bookTitle, .bookAuthor, .bookPages {
@@ -148,14 +155,16 @@ body, button, input {
     width: 100%;
     font-size: 20px;
     font-weight: 700;
-    background-color: darkgreen;
+    background-color: #23804f;
     height: fit-content;
     grid-row: 4 / 5;
     cursor: pointer;
+    border-radius: 20%;
+    box-shadow: 2px 2px 2px #9c8442;
 }
 
 .bookNotRead {
-    background-color: darkred;
+    background-color: #c83540;
 }
 
 /* ADD BOOK FORM */
@@ -170,9 +179,9 @@ body, button, input {
     left: calc(50vw - (300px / 2)); 
     display: none;
     background-color: #f9f6d7;
+    border-color: #a3a082;
     padding: 20px;
     border-radius: 10px;
-    border-style: none;
     z-index: 1;
     animation: fade_in_show 0.5s;
 }
@@ -227,7 +236,7 @@ input[type="checkbox"] {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    accent-color: green;
+    accent-color: #456b49;
 }
 
 label {
@@ -238,11 +247,11 @@ label {
     padding: 10px;
     font-size: 25px;
     font-weight: 700;
-    background-color: #6f5234;
+    background-color: #6b5445;
     color: whitesmoke;
-    border-radius: 20px;
-    border-style: none;
+    border-radius: 20%;
     cursor: pointer;
+    box-shadow: 2px 2px 2px #a09e88;
 }
 
 #formBackground {
