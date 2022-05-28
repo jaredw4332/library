@@ -1,14 +1,9 @@
 let myLibrary = [];
 const libraryDisplay = document.getElementById("libraryDisplay")
 
-const beans = new Book("beans", "jimmy beans", 5, "Not yet read")
-const orange = new Book("Catcher in the Rye", "Ernest Hemingway", 20, "Read")
-const orange2 = new Book("A Long Way Home From Midtown West", "Ernest Hemingway", 20, "Read")
-const orange4 = new Book("Tommy", "Ernest Hemingway", 20, "Read")
-const orange3 = new Book("Tommy", "Ernest Hemingway", 20, "Read")
-const orange7 = new Book("Tommy", "Ernest Hemingway", 20, "Read")
-const orange8 = new Book("Tommy", "Ernest Hemingway", 20, "Not yet read")
-myLibrary.push(beans, orange, orange2, orange3, orange4, orange7, orange8)
+const kant = new Book("Critique of Pure Reason", "Immanuel Kant", 856, "Not yet read")
+const hemingway = new Book("The Sun Also Rises", "Ernest Hemingway", 247, "Read")
+myLibrary.push(kant, hemingway)
 bookDisplay()
 
 function Book(title, author, pages, read) {
