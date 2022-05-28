@@ -11,29 +11,31 @@
 <body>
     <div id="container">
         <div id="headerContent">
-            <h1>Welcome to the library</h1>
+            <h1>Welcome to your library</h1>
             <button type="button" id="addBookButton" onclick="openForm()">Add book</button>
         </div>
 
-        <div id="popupForm">
-            <!-- <button type="button" id="closeFormButton" onclick="closeForm()">X</button> -->
-            <form id="bookInput" onsubmit="return addBookToLibrary()">
-                <p id="popupHeader">Add a new book!</p>
-                <input type="text" name="title" id="title" placeholder="Title" required>
-
-                <input type="text" name="author" id="author" placeholder="Author" required>
-
-                <input type="number" name="pages" id="pages" placeholder="Pages" required>
-
-                <label for="read">Have you read this book?</label>
-                <input type="hidden" name="read" value="Not yet read">
-                <input type="checkbox" name="read" id="read" value="Read">
-
-                <button type="submit" id="submitBook">Submit</button>
-            </form>
-        </div>
+        <div id="formBackground"></div>
 
         <div id="libraryDisplay"></div>
     </div>
+
+    <div id="popupForm">
+        <form id="bookInput" onsubmit="return addBookToLibrary()">
+            <p id="popupHeader">Add a new book!</p>
+            <input type="text" name="title" id="title" placeholder="Title" required>
+
+            <input type="text" name="author" id="author" placeholder="Author" required>
+
+            <input type="number" name="pages" id="pages" placeholder="Pages" required>
+
+            <label for="read">Have you read this book?</label>
+            <input type="hidden" name="read" value="Not yet read">
+            <input type="checkbox" name="read" id="read" value="Read">
+
+            <button type="submit" id="submitBook">Submit</button>
+        </form>
+    </div>
+    
 </body>
 </html>
