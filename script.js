@@ -33,6 +33,7 @@ function addBookToLibrary() {
 
     bookDisplay()
     document.getElementById("bookInput").reset()
+    closeForm()
     return false
 }
 
