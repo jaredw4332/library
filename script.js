@@ -1,3 +1,12 @@
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
+}
+
 let myLibrary = [];
 const libraryDisplay = document.getElementById("libraryDisplay")
 
@@ -5,16 +14,6 @@ const kant = new Book("Critique of Pure Reason", "Immanuel Kant", 856, "Not yet 
 const hemingway = new Book("The Sun Also Rises", "Ernest Hemingway", 247, "Read")
 myLibrary.push(kant, hemingway)
 bookDisplay()
-
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.bookInfo = function() {
-        return `${title} by ${author}, ${pages} pages, ${read}`
-    }
-}
 
 function addBookToLibrary() {
     let bookTitle = document.getElementById("title").value
