@@ -1,12 +1,3 @@
-class Book {
-    constructor(title, author, pages, read) {
-        this.title = title
-        this.author = author
-        this.pages = pages
-        this.read = read
-    }
-}
-
 let myLibrary = [];
 const libraryDisplay = document.getElementById("libraryDisplay")
 
@@ -14,6 +5,16 @@ const kant = new Book("Critique of Pure Reason", "Immanuel Kant", 856, "Not yet 
 const hemingway = new Book("The Sun Also Rises", "Ernest Hemingway", 247, "Read")
 myLibrary.push(kant, hemingway)
 bookDisplay()
+
+function Book(title, author, pages, read) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+    this.bookInfo = function() {
+        return `${title} by ${author}, ${pages} pages, ${read}`
+    }
+}
 
 function addBookToLibrary() {
     let bookTitle = document.getElementById("title").value
@@ -111,3 +112,37 @@ function closeForm() {
 }
 
 formBackground.addEventListener("click", closeForm)
+
+const title = document.getElementById("title")
+const author = document.getElementById("author")
+const pages = document.getElementById("pages")
+
+title.addEventListener("invalid", function (event) {
+    if (title.validity.valueMissing) {
+        title.setCustomValidity("A book needs a title.")
+        title.reportValidity()
+    } else {
+        title.setCustomValidity("")
+    }
+})
+
+author.addEventListener("invalid", function (event) {
+    if (author.validity.valueMissing) {
+        author.setCustomValidity("A book needs an author.")
+        author.reportValidity()
+    } else {
+        author.setCustomValidity("")
+    }
+})
+
+pages.addEventListener("invalid", function (event) {
+    if (pages.validity.valueMissing) {
+        pages.setCustomValidity("A book needs pages.")
+        pages.reportValidity()
+    } else if (pages.validity.rangeUnderflow) {
+        pages.setCustomValidity("A book still needs pages.")
+        pages.reportValidity()
+    } else {
+        pages.setCustomValidity("")
+    }
+})
